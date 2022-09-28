@@ -45,13 +45,7 @@ docker run -p 25565:25565 -e EULA=true test/rlcraft-server
 一个使用示例：
 
 ```bash
-docker run -dit \
-		   -p 25565:25565 \
-		   -e EULA=true \
-		   -e Xms=4G \
-		   -e Xmx=6G \
-		   --name rlc \
-		   test/rlcraft-server
+docker run -dit -p 25565:25565 -e EULA=true -e Xms=4G -e Xmx=6G --name rlc test/rlcraft-server
 ```
 
 ### 直接使用
@@ -64,29 +58,16 @@ docker pull nafnix/rlcraft-server
 运行示例，指定最小占用内存 `4G`，最大占用内存 `6G`，将容器内的 `25565` 端口映射到主机的 `23333` 端口，名为 `rlc` 的容器：
 
 ```bash
-docker run -dit \
-		   -p 23333:25565 \
-		   -e EULA=true \
-		   -e Xms=4G \
-		   -e Xmx=6G \
-		   --name rlc \
-		   nafnix/rlcraft-server
+docker run -dit -p 23333:25565 -e EULA=true -e Xms=4G -e Xmx=6G --name rlc nafnix/rlcraft-server
 ```
 
-可以将文件指定挂载到本地指定路径下，方便后期的修改或备份：
+如果想查看运行日志，可以输入：
 
 ```bash
-mkdir /home/rlcraft-server
-
-docker run -dit \
-		   -p 25565:25565 \
-		   -e EULA=true \
-		   -e Xms=4G \
-		   -e Xmx=6G \
-		   -v /home/rlcraft-server:/home/mcserver/RLCraft-Server \
-		   --name rlc \
-		   nafnix/rlcraft-server
+docker logs -f rlc
 ```
+
+可以同时按下 Ctrl 和 c 停止查看。
 
 ### 本地构建并运行
 
