@@ -1,3 +1,0 @@
-deb http://mirror.sjtu.edu.cn/debian stable main contrib non-free
-deb http://mirror.sjtu.edu.cn/debian stable-updates main contrib non-free
-deb http://mirror.sjtu.edu.cn/debian-security/ stable-security main non-free contrib
