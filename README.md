@@ -1,12 +1,14 @@
 # 使用 Docker 创建 RLCraft 服务器
 
-## 构建
+## 本地构建并运行
+
+### 构建
 
 ```bash
 docker build -t rlcraft-server .
 ```
 
-## 启动示例
+### 运行示例
 
 ### 使用默认配置启动
 
@@ -53,7 +55,7 @@ docker run -d \
 
 ## 使用 Docker Hub 上已构建好的容器示例
 
-可能因为本地网络不佳或是其他什么原因，总是在某一部构建失败，为此可以使用我已经构建好的容器。
+可能因为本地网络不佳或是其他什么原因，总是卡在某一步构建失败，解决这个问题的方法之一是使用我已经构建好的容器。
 
 ### 拉取容器
 
@@ -76,3 +78,5 @@ docker run -d \
            --name my-rlcraft \
            nafnix/rlcraft-server:v2.9.2d
 ```
+
+关于更加详细的启动命令描述可以参考 [运行示例](https://github.com/nafnix/RLCraftDocker/tree/master#运行示例) 章节的内容
