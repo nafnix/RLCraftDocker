@@ -18,15 +18,15 @@ docker build -t rlcraft-server .
 
 #### 使用默认配置启动
 
-- `-v my-rlcraft-world:/rlcraft/world`: 备份世界存档路径。当指定该值后，后续再使用此值将会使用相同的地图。如果不需要备份地图，可以不指定这个值。
+- `-v mc-rlcraft-world:/rlcraft/world`: 备份世界存档路径。当指定该值后，后续再使用此值将会使用相同的地图。如果不需要备份地图，可以不指定这个值。
 - `-e EULA=true`: 表示同意 [MINECRAFT END USER LICENSE AGREEMENT](https://www.minecraft.net/en-us/eula)。
 
 ```bash
 docker run -it \
            -p 25565:25565 \
            -e EULA=true \
-           -v my-rlcraft-world:/rlcraft/world \
-           --name my-rlcraft \
+           -v mc-rlcraft-world:/rlcraft/world \
+           --name mc-rlcraft \
            rlcraft-server
 ```
 
@@ -45,14 +45,14 @@ docker run -it \
            -e XMS=3G \
            -e XMX=5G \
            -e EULA=true \
-           -v my-rlcraft-world:/rlcraft/world \
-           --name my-rlcraft \
+           -v mc-rlcraft-world:/rlcraft/world \
+           --name mc-rlcraft \
            rlcraft-server
 ```
 
 #### 指定初始地图大小
 
-**建议：指定该命令时携带 `-v my-rlcraft-world:/rlcraft/world` 参数。**
+**建议：指定该命令时携带 `-v mc-rlcraft-world:/rlcraft/world` 参数。**
 
 | 变量名       | 值                 | 作用                 |
 | ------------ | ------------------ | -------------------- |
@@ -67,8 +67,8 @@ docker run -it \
            -p 25565:25565 \
            -e EULA=true \
            -e START_SIZE=26 \
-           -v my-rlcraft-world:/rlcraft/world \
-           --name my-rlcraft \
+           -v mc-rlcraft-world:/rlcraft/world \
+           --name mc-rlcraft \
            rlcraft-server
 ```
 
@@ -80,16 +80,16 @@ docker run -d \
            -e XMS=3G \
            -e XMX=5G \
            -e EULA=true \
-           -v my-rlcraft-world:/rlcraft/world \
-           --name my-rlcraft \
+           -v mc-rlcraft-world:/rlcraft/world \
+           --name mc-rlcraft \
            rlcraft-server
 ```
 
 #### 删除容器
 
 ```bash
-docker stop my-rlcraft
-docker rm my-rlcraft
+docker stop mc-rlcraft
+docker rm mc-rlcraft
 ```
 
 #### 删除镜像
@@ -117,8 +117,8 @@ docker pull nafnix/rlcraft-server:v2.9.2d
 ```bash
 docker run -d \
            -p 25565:25565 \
-           -e XMS=3G \
-           -e XMX=5G \
+           -e XMS=1G \
+           -e XMX=2G \
            -e EULA=true \
            -v mc-rlcraft-world:/rlcraft/world \
            --name mc-rlcraft \
