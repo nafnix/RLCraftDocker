@@ -1,0 +1,15 @@
+{
+    "[dockerfile]": {
+        "editor.defaultFormatter": "foxundermoon.shell-format"
+    },
+    "[shellscript]": {
+        "editor.defaultFormatter": "foxundermoon.shell-format"
+    },
+    "editor.unicodeHighlight.allowedLocales": {
+        "zh-hans": true
+    },
+    "cSpell.userWords": [
+        "nafnix"
+    ],
+    "shellformat.useEditorConfig": true,
+}
